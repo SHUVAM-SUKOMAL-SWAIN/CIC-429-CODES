@@ -4,11 +4,10 @@ echo "-------------------------Roll the dice-----------------------"
 declare -A show
 array=( 0 0 0 0 0 0 )
 
-for ((i=1;i<100;i++))
+while [ true ]
 do
 	
         num=$(( (RANDOM%6)+1 ))
-        #echo $num
 
         case $num in
           1)
@@ -71,7 +70,7 @@ min=${array[0]}
 
 for num in ${!show[@]}
 do
- echo $num " comes " ${show[$num]} " times "
+ echo $num " came " ${show[$num]} " times "
 
 	if [ ${show[$num]} -eq 10 ]
 	then

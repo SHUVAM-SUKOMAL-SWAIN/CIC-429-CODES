@@ -1,8 +1,10 @@
-read -p "Enter the last range of the harmonic series: " range
-num=0
-for ((i=1;i<=$range;i++))
-do
-echo $i
-num=$(( $mean + (1/$i) ))
+read -p "Enter the range of the harmonic series : " range
+harmonic=0
+
+for((i=1;i<=$range;i++))
+do 
+	ans=`awk "BEGIN {print (1/$i)}"`
+	harmonic=`awk "BEGIN {print ($harmonic+$ans)}"`
+	#echo $ans
 done
-echo "The sum of the harmonic mean is: " $mean
+echo "The harmonic number for range (1 to $range) is: " $harmonic
